@@ -30,13 +30,15 @@ docker system prune - очищает неиспользуемые ресурсы
 Ниже приведены основные команды Docker Compose с кратким описанием:
 
 docker-compose up - создает и запускает контейнеры на основе определения в файле docker-compose.yml
-docker-compose up --build - используется для запуска контейнеров на основе вашего docker-compose.yml файла и одновременно пересборки образов, если есть какие-либо изменения в Dockerfile или в вашем приложении.
+docker-compose up --build - используется для запуска контейнеров на основе вашего docker-compose.yml файла и одновременно пересборки образов, если есть какие-либо изменения в Dockerfile или в вашем приложении
+docker-compose up -d: Запускает приложение в фоновом режиме (без вывода журналов на экран).
 docker-compose down - останавливает и удаляет все контейнеры, созданные при запуске файла docker-compose.yml
 docker-compose ps - показывает список запущенных контейнеров, созданных с помощью docker-compose
 docker-compose logs - показывает логи запущенных контейнеров, созданных с помощью docker-compose
 docker-compose build - собирает образы на основе определения в файле docker-compose.yml
 docker-compose run - запускает команду в контейнере, созданном из определения в файле docker-compose.yml
-
+docker-compose restart: Перезапускает контейнеры, не изменяя их конфигурации.
+docker-compose exec -it <container_name> <command> - 
 
 Ниже приведены основные команды Django с кратким описанием:
 
@@ -49,7 +51,7 @@ python manage.py createsuperuser - создает суперпользовате
 python manage.py shell - запускает интерактивную оболочку Django, в которой можно выполнять команды Python для работы с моделями и данными
 python manage.py collectstatic - копирует все статические файлы проекта (CSS, JS, изображения и т.д.) в единый каталог для использования в продакшен-сервере
 python manage.py test - запускает тесты приложения для проверки корректности его работы
-
+python manage.py showurls - вывод списка всех URL-шаблонов в приложении
 
 Виды HTTP запросов:
 
