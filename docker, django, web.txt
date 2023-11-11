@@ -1,44 +1,63 @@
 Ниже приведены основные команды Docker с кратким описанием:
 
-docker --version - используется для вывода версии Docker
-docker version - выводит информацию о версии Docker, клиента и сервера
-docker images - показывает список локально сохраненных образов
-docker ps - показывает список запущенных контейнеров
-docker ps -a - показывает список контейнеров, включая остановленные
-docker run <image_name> - запускает новый контейнер из указанного образа
-docker run -d -it <image_name> - запускает новый контейнер из указанного образа, -d - в фоновом режиме, -it - с интерактивным терминалом
-docker create <image_name> - создает новый контейнер из указанного образа, но не запускает его
+docker --version - эта команда используется для вывода версии Docker, установленной на вашей системе
+docker version - выводит информацию о версии Docker, включая версии клиента и сервера Docker
+docker images - показывает список локально сохраненных образов Docker на вашей системе. Эти образы могут быть использованы для создания контейнеров
+docker ps - показывает список запущенных контейнеров. По умолчанию выводит только работающие контейнеры
+docker ps -a - показывает список всех контейнеров на вашей системе, включая остановленные
+docker run <image_name> - запускает новый контейнер из указанного образа Docker
+docker run -d -it <image_name> - запускает новый контейнер в фоновом режиме с интерактивным терминалом. Опция -d означает "detach" (отсоединение), 
+  а -it позволяет взаимодействовать с контейнером через интерактивный терминал
+docker create <image_name> - создает новый контейнер из указанного образа Docker, но не запускает его
 docker stop <container_id> - останавливает контейнер с указанным идентификатором
 docker inspect <container_id> - показывает подробную информацию о контейнере, включая его конфигурацию и параметры
 docker kill <container_id> - немедленно прерывает выполнение контейнера, не давая ему выполнять завершающие действия
 docker rm <container_id> - удаляет один или несколько контейнеров
-docker rmi <image_id> - удаляет один или несколько образов
-docker image build -t <image_name> <path_to_dockerfile> - собирает новый образ на основе Dockerfile с указанным именем и тегом
-docker image push <image_name> - отправляет локальный образ на Docker Hub или другой реестр, если он имеет тег
-docker pull <image_name> - загружает образ с Docker Hub или другого реестра
-
+docker rmi <image_id> - удаляет один или несколько образов Docker
+docker image build -t <image_name> <path_to_dockerfile> - собирает новый образ Docker на основе Dockerfile с указанным именем и тегом
+docker image push <image_name> - отправляет локальный образ Docker на Docker Hub или другой реестр, если он имеет тег
+docker pull <image_name> - загружает образ Docker с Docker Hub или другого реестра
 docker exec -it <container_id> bash - позволяет вам войти внутрь работающего контейнера в интерактивном режиме с использованием оболочки Bash
 docker exec -it <container_id> <command> - позволяет выполнить команду внутри работающего контейнера
-
 docker info - выводит общую информацию о Docker, включая количество контейнеров и образов на вашей системе, а также настройки Docker
 docker network ls - показывает список созданных сетей Docker на вашей системе
 docker volume ls - показывает список созданных Docker-томов (volumes) на вашей системе
 docker logs <container_id> - показывает логи контейнера
 docker stats - показывает статистику использования ресурсов контейнерами на вашей системе
-docker system prune - очищает неиспользуемые ресурсы Docker, такие как неактивные контейнеры, образы и сети
+docker system prune- очищает неиспользуемые ресурсы Docker, такие как неактивные контейнеры, образы и сети
 
 Ниже приведены основные команды Docker Compose с кратким описанием:
 
 docker-compose up - создает и запускает контейнеры на основе определения в файле docker-compose.yml
-docker-compose up --build - используется для запуска контейнеров на основе вашего docker-compose.yml файла и одновременно пересборки образов, если есть какие-либо изменения в Dockerfile или в вашем приложении
-docker-compose up -d: Запускает приложение в фоновом режиме (без вывода журналов на экран).
+docker-compose up --build - запускает контейнеры на основе вашего docker-compose.yml файла и одновременно пересобирает образы, если есть изменения в Dockerfile или вашем приложении
+docker-compose up -d - запускает приложение в фоновом режиме, без вывода журналов на экран
 docker-compose down - останавливает и удаляет все контейнеры, созданные при запуске файла docker-compose.yml
 docker-compose ps - показывает список запущенных контейнеров, созданных с помощью docker-compose
 docker-compose logs - показывает логи запущенных контейнеров, созданных с помощью docker-compose
 docker-compose build - собирает образы на основе определения в файле docker-compose.yml
 docker-compose run - запускает команду в контейнере, созданном из определения в файле docker-compose.yml
-docker-compose restart: Перезапускает контейнеры, не изменяя их конфигурации.
-docker-compose exec -it <container_name> <command> - 
+docker-compose restart - перезапускает контейнеры, не изменяя их конфигурации
+docker-compose exec -it <container_name> <command> - позволяет выполнить команду внутри контейнера, созданного с помощью Docker Compose 
+
+Дополнительные команды Docker:
+
+docker build -t <image_name>:<tag> <path_to_dockerfile> - собирает новый образ Docker на основе Dockerfile с указанным именем и тегом
+docker login - позволяет вам авторизоваться в Docker Hub или другом реестре Docker
+docker logout - выходит из учетной записи Docker Hub или другого реестра Docker
+docker push <image_name>:<tag> - отправляет локальный образ Docker с указанным именем и тегом на Docker Hub или другой реестр Docker
+docker pull <image_name>:<tag> - загружает образ Docker с указанным именем и тегом с Docker Hub или другого реестра Docker
+docker network create <network_name> - создает новую сеть Docker с указанным именем
+docker volume create <volume_name> - создает новый Docker-том (volume) с указанным именем
+
+Дополнительные команды Docker Compose:
+
+docker-compose down -v - останавливает и удаляет все контейнеры, созданные при запуске файла docker-compose.yml, а также удаляет связанные с ними тома (volumes)
+docker-compose stop - останавливает контейнеры, но не удаляет их. Вы можете потом снова запустить их с помощью docker-compose start
+docker-compose start - запускает остановленные контейнеры, созданные в файле docker-compose.yml
+docker-compose pause - приостанавливает выполнение контейнеров, сохраняя их состояние. Можно продолжить выполнение с помощью docker-compose unpause
+docker-compose unpause - возобновляет выполнение приостановленных контейнеров
+docker-compose top - показывает список процессов внутри контейнера, созданного с помощью Docker Compose
+docker-compose config - проверяет конфигурацию файла docker-compose.yml и выводит его
 
 Ниже приведены основные команды Django с кратким описанием:
 
