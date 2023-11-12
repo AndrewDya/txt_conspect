@@ -26,6 +26,7 @@ docker logs <container_id> - показывает логи контейнера
 docker stats - показывает статистику использования ресурсов контейнерами на вашей системе
 docker system prune - очищает неиспользуемые ресурсы Docker, такие как неактивные контейнеры, образы и сети
 
+docker build . -t <image_name> - создать docker image на основе Dockerfile
 Ниже приведены основные команды Docker Compose с кратким описанием:
 
 docker-compose up - создает и запускает контейнеры на основе определения в файле docker-compose.yml
