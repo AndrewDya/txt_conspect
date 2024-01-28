@@ -77,6 +77,7 @@ git branch -d <branch_name> - удаление ветки <branch_name>
 git branch -a - список всех локальных и удалённых веток
 git checkout <branch_name/commit_hash> - переключает между ветками/восстанавливает файлы из предыдущих коммитов
 git checkout -b <branch_name> - создать ветку <branch_name> и сразу переключиться на неё
+git checkout -t origin/<branch_name> - создать ветку <branch_name> локально, котороя существует удалённо
 
 Ниже перечислены дополнительные команды git (системы контроля версий):
 
